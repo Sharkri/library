@@ -1,0 +1,16 @@
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  background-color: white;
+  display: grid;
+  gap: 25px;
+}
+.close-button {
+  background-color: #ef4444;
+  border-radius: 10px;
+  justify-self: end;
+}
