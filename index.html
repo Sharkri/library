@@ -8,43 +8,48 @@
     <link rel="stylesheet" href="library.css" />
   </head>
   <body>
-    <button class="newBook" onclick="OverlayOpen()">NEW BOOK</button>
-    <div class="overlay">
-      <form action="" class="form" onsubmit="return false;">
-        <button class="close-button" type="button" onclick="closeOverlay()">
-          x
-        </button>
-        <input
-          type="text"
-          placeholder="Author"
-          name="author"
-          id="author"
-          required
-        />
-        <input
-          type="text"
-          placeholder="Title"
-          name="title"
-          id="title"
-          required
-        />
-        <input
-          type="number"
-          placeholder="Number of pages"
-          name="pages"
-          id="pages"
-          required
-        />
-        <div class="inputRead">
-          <label for="read">Have you read the book?</label>
-          <input type="checkbox" name="read" id="read" placeholder="Read?" />
-        </div>
-        <button class="submit" type="submit" onclick="submitBook()">
-          Submit
-        </button>
-      </form>
+    <div class="container">
+      <div class="header"><h1>library</h1></div>
+      <div class="createbook">
+        <button class="newBook" onclick="OverlayOpen()">+ New Book</button>
+      </div>
+      <div class="overlay">
+        <form action="" class="form" onsubmit="return false;">
+          <button class="close-button" type="button" onclick="closeOverlay()">
+            x
+          </button>
+          <input
+            type="text"
+            placeholder="Author"
+            name="author"
+            id="author"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            id="title"
+            required
+          />
+          <input
+            type="number"
+            placeholder="Number of pages"
+            name="pages"
+            id="pages"
+            required
+          />
+          <div class="inputRead">
+            <label for="read">Have you read the book?</label>
+            <input type="checkbox" name="read" id="read" placeholder="Read?" />
+          </div>
+          <button class="submit" type="submit" onclick="submitBook()">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="books"></div>
     </div>
-    <div class="books"></div>
   </body>
   <script src="library.js"></script>
 </html>
