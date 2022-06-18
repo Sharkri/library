@@ -1,4 +1,10 @@
-let myLibrary = [];
+let myLibrary = [
+  { author: "123", title: "12", pages: "12", read: true },
+  { author: "123", title: "12", pages: "12", read: true },
+  { author: "123", title: "12", pages: "12", read: false },
+  { author: "123", title: "12", pages: "12", read: true },
+  { author: "123", title: "12", pages: "12", read: true },
+];
 const displayBooks = document.querySelector(".books");
 const overlay = document.querySelector(".overlay");
 const author = document.querySelector("#author");
@@ -31,6 +37,8 @@ function addBookToDisplay(book) {
   author.textContent += `Author: ${book.author} `;
   pages.textContent += `Pages: ${book.pages} `;
   read.textContent = book.read ? "Read" : "Not Read";
+  read.style.background = book.read ? "#4ade80" : "#f87171";
+
   remove.textContent = "Remove";
 
   read.classList.add(`read${counter}`);
@@ -70,16 +78,17 @@ document.addEventListener("click", (e) => {
     }
   }
   if (e.target.id === "readButton") {
-    let bool =
-      document.querySelector(`.${e.target.className}`).textContent === "Read"
-        ? false
-        : true;
+    let readText = document.querySelector(`.${e.target.className}`);
+
+    let bool = readText.textContent === "Read" ? false : true;
     if (bool) {
       myLibrary[e.target.className.slice(-1)].read = true;
-      document.querySelector(`.${e.target.className}`).textContent = "Read";
+      readText.textContent = "Read";
+      readText.style.background = "#4ade80";
     } else {
       myLibrary[e.target.className.slice(-1)].read = false;
-      document.querySelector(`.${e.target.className}`).textContent = "Not Read";
+      readText.textContent = "Not Read";
+      readText.style.background = "#f87171";
     }
   }
 });
