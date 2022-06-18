@@ -1,10 +1,4 @@
-let myLibrary = [
-  { author: "123", title: "12", pages: "12", read: true },
-  { author: "123", title: "12", pages: "12", read: true },
-  { author: "123", title: "12", pages: "12", read: false },
-  { author: "123", title: "12", pages: "12", read: true },
-  { author: "123", title: "12", pages: "12", read: true },
-];
+let myLibrary = [];
 const displayBooks = document.querySelector(".books");
 const overlay = document.querySelector(".overlay");
 const author = document.querySelector("#author");
