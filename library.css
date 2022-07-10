@@ -28,10 +28,20 @@ h1 {
   font-weight: bold;
 }
 .overlay {
+  display: none;
+}
+.overlay.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 .inputs {
   display: grid;
@@ -82,6 +92,12 @@ input[type="checkbox"] {
   align-self: stretch;
   font-size: 18px;
 }
+#readButton {
+  background-color: #4ade80;
+}
+#readButton.not-read {
+  background-color: #f87171;
+}
 input::placeholder {
   padding-left: 8px;
   font-size: 18px;
@@ -96,7 +112,7 @@ input::placeholder {
 }
 .books {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 30px;
 }
@@ -119,6 +135,7 @@ button,
 input {
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 .createbook button {
   font-size: 30px;
@@ -132,6 +149,6 @@ input {
 }
 .submit:hover,
 .createbook button:hover {
+  transition: 0.5s;
   background-color: #00aeff;
 }
-/* FIX STUFF*/
