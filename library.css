@@ -61,9 +61,24 @@ h1 {
 }
 
 input {
-  border-radius: 10px;
-  font-size: 18px;
+  border: #ddd 1.6px solid;
+  border-radius: 8px;
+  transition: border 0.25s, box-shadow 0.25s;
 }
+
+input:focus {
+  border-color: #3a60c7;
+  outline: none;
+  box-shadow: 0px 2.5px 5px 2.5px rgba(58, 96, 199, 0.125);
+}
+
+input:not(:placeholder-shown):invalid {
+  border-color: red;
+}
+input:not(:placeholder-shown):invalid:focus {
+  box-shadow: 0px 2.5px 5px 2.5px rgba(239, 68, 68, 0.125);
+}
+
 label {
   font-size: 21px;
 }
@@ -99,8 +114,8 @@ input[type="checkbox"] {
   background-color: #f87171;
 }
 input::placeholder {
-  padding-left: 8px;
-  font-size: 18px;
+  padding-left: 6px;
+  font-size: 16px;
 }
 .close {
   display: flex;
@@ -131,8 +146,7 @@ input::placeholder {
   display: flex;
   justify-content: center;
 }
-button,
-input {
+button {
   border: none;
   border-radius: 10px;
   cursor: pointer;

@@ -26,6 +26,9 @@
               placeholder="Author"
               name="author"
               id="author"
+              oninvalid="this.setCustomValidity('Author is required')"
+              oninput="this.setCustomValidity('')"
+              title="Author is required"
               required
             />
             <input
@@ -33,6 +36,9 @@
               placeholder="Title"
               name="title"
               id="title"
+              oninvalid="this.setCustomValidity('Title is required')"
+              oninput="this.setCustomValidity('')"
+              title="Title is required"
               required
             />
             <input
@@ -40,6 +46,8 @@
               placeholder="Number of pages"
               name="pages"
               id="pages"
+              min="1"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
               required
             />
             <div class="inputRead">

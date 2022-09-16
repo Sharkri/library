@@ -75,7 +75,7 @@ document.addEventListener("click", (e) => {
     const readBtn = document.querySelector(`.${e.target.classList[0]}`);
     readBtn.classList.toggle("not-read");
 
-    const isRead = readBtn.className.includes("not-read") ? false : true;
+    const isRead = !readBtn.className.includes("not-read");
     const readNum = readBtn.classList[0].slice(-1);
 
     myLibrary[readNum].read = isRead;
@@ -91,7 +91,7 @@ function openOverlay() {
 }
 const closeOverlay = () => overlay.classList.toggle("active");
 function submitBook() {
-  if (!author.value || !title.value || !pages.value) return;
+  if (!author.value || !title.value || pages.value <= 0) return;
   closeOverlay();
   newBook = new Book(author.value, title.value, pages.value, readInput.checked);
   addBookToLibrary(newBook);
